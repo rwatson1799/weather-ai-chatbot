@@ -18,7 +18,7 @@ export const weatherAgent = new Agent({
             execute: async ({ city }) => {
                 try {
                     const response = await fetch(
-                        `http://localhost:3001/api/weather/${encodeURIComponent(city)}`
+                        `${process.env.WEATHER_API_URL}/api/weather/${encodeURIComponent(city)}`
                     );
 
                     if (!response.ok) {
